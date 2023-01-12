@@ -1,6 +1,7 @@
 import React from "react";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import {
   FaFacebookF,
@@ -8,18 +9,27 @@ import {
   FaYoutube,
   FaTiktok,
   FaRegQuestionCircle,
+  FaAngleUp,
 } from "react-icons/fa";
 
 import { AiOutlineMail } from "react-icons/ai";
 
 export const Footerft = () => (
-  <>
+  <div className="px-10">
+    {/* Boton */}
+    <div className="flex justify-end">
+      <Link href="#">
+        <button className="inline-block text-center text-white transition bg-[#8CA6EA] rounded-full shadow ripple hover:shadow-lg focus:outline-none">
+          <FaAngleUp className="w-9 h-9 p-2 text-[#0F51FA]" />
+        </button>
+      </Link>
+    </div>
     {/*  Centro de ayuda y contactanos */}
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 pb-4">
       <div className="grid grid-cols-1">
-        <h3>Centro de ayuda y contacto</h3>
+        <h3 className="font-bold text-[#091535]">Centro de ayuda y contacto</h3>
 
-        <label className="inline-flex items-center">
+        <label className="inline-flex items-center text-[#637381]">
           <FaRegQuestionCircle />
           <span>¿Tienes alguna duda?</span>
         </label>
@@ -29,51 +39,56 @@ export const Footerft = () => (
             Te ayudamos aqui
           </button>
         </div>
-        <div>
+        <div className="text-[#637381]">
           Consulta tus dudas sobre medicamentos con nuestros farmaceuticos aqui
         </div>
       </div>
 
-      <div className="grid grid-cols-1">
-        <h3>Conócenos</h3>
-        <p>¿Qué es farmacia Torres?</p>
-        <p>Trabaja con nosotros</p>
+      <div className="grid grid-cols-1 pb-2 lg:pb-14 ">
+        <h3 className="font-bold text-[#091535]">Conócenos</h3>
+        <Link className="text-[#637381]" href="#">
+          ¿Qué es farmacia Torres?
+        </Link>
+        <Link className="text-[#637381]" href="#">
+          Trabaja con nosotros
+        </Link>
       </div>
 
-      <div className="grid grid-cols-1">
-        Siguenos en
-        <div className="flex justify-start">
+      <div className="grid grid-cols-1 pb-4">
+        <div className="font-bold text-[#091535]"> Siguenos en</div>
+
+        <div className="flex justify-start pb-2 lg:pb-14">
           <div className="">
-            <button className="inline-block text-center text-white transition bg-white rounded-full shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none">
-              <FaFacebookF className="w-9 h-9 p-2 hover:text-white text-black" />
-            </button>
-            <button className="inline-block text-center text-white transition bg-white rounded-full shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none">
-              <FaInstagramSquare className="w-9 h-9 p-2 hover:text-white text-black" />
-            </button>
-            <button className="inline-block text-center text-white transition bg-white rounded-full shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none">
-              <FaYoutube className="w-9 h-9 p-2 hover:text-white text-black" />
-            </button>
-            <button className="inline-block text-center text-white transition bg-white rounded-full shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none">
-              <FaTiktok className="w-9 h-9 p-2 hover:text-white text-black" />
-            </button>
+            <Link href="https://es-la.facebook.com/FarmaciatorresWeb/">
+              <button className="inline-block text-center text-white transition bg-white rounded-full shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none">
+                <FaFacebookF className="w-9 h-9 p-2 hover:text-white text-black" />
+              </button>
+            </Link>
+            <Link href="https://www.instagram.com/farmaciatorres/">
+              <button className="inline-block text-center text-white transition bg-white rounded-full shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none">
+                <FaInstagramSquare className="w-9 h-9 p-2 hover:text-white text-black" />
+              </button>
+            </Link>
+            <Link href="https://www.youtube.com/@farmaciatorres6804">
+              <button className="inline-block text-center text-white transition bg-white rounded-full shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none">
+                <FaYoutube className="w-9 h-9 p-2 hover:text-white text-black" />
+              </button>
+            </Link>
+            <Link href="https://www.tiktok.com/@farmaciatorres_">
+              <button className="inline-block text-center text-white transition bg-white rounded-full shadow ripple hover:shadow-lg hover:bg-blue-800 focus:outline-none">
+                <FaTiktok className="w-9 h-9 p-2 hover:text-white text-black" />
+              </button>
+            </Link>
           </div>
         </div>
       </div>
     </div>
-
     <hr width="100%" />
-
     {/* Newslestter */}
     <>
-      <h3>Suscríbete a nuestro Newsletter</h3>
+      <h3 className="py-2 font-bold text-[#091535]">Suscríbete a nuestro Newsletter</h3>
       <form>
-        <div className="grid grid-cols-1">
-          <label
-            htmlFor="search-dropdown"
-            className="mb-2 text-sm font-medium text-gray-900 sr-only "
-          >
-            Your Email
-          </label>
+        <div className="grid grid-cols-1 py-2">
           <div className="relative w-64">
             <input
               type="search"
@@ -88,38 +103,70 @@ export const Footerft = () => (
               <AiOutlineMail className="text-xl" />
             </button>
           </div>
-          <p>
+          <p className="py-4 text-[#637381]">
             Entérate primero de nuestras exclusivas ofertas y promociones.
             ¡Suscríbete!
           </p>
           <div className="flex ">
             <label className="flex items-center">
               <input type="checkbox" className="form-checkbox" />
-              <span className="ml-2">
+              <span className="ml-2 text-[#637381]">
                 He leido la
-                <span className="font-semibold">politica y privacidad</span> y
-                acepto los <span> </span>
+                <span className="font-semibold">
+                  <Link href="#"> politica y privacidad</Link>
+                </span>{" "}
+                y acepto los <span> </span>
                 <span className="underline font-semibold">
-                  términos y condiciones
+                  <Link href="#"> términos y condiciones</Link>
                 </span>
               </span>
             </label>
           </div>
         </div>
       </form>
-      <p>
+      <p className="py-2 text-[#637381]">
         Te informamos de que Farmacia Torres tratará el correo electrónico
         facilitado para remitirte comunicaciones comerciales o promociones en
-        base a tu perfil de usuario,
-        <br />
-        en caso de otorgar tu consentimiento. Más información aquí
+        base a tu perfil de usuario, en caso de otorgar tu consentimiento. Más
+        información aquí
       </p>
     </>
-
-    <>
-    
-    </>
-  </>
+    <hr width="100%" />
+    {/*  Images */}
+    <div className="grid grid-cols-1 lg:flex lg:justify-between py-4">
+      <Image
+        className="pb-6 lg:py-0"
+        src="/images/industriaycomercio.svg"
+        width={190}
+        height={50}
+      />
+      <Image
+        className="pb-2 lg:py-0"
+        src="/images/cards.svg"
+        width={190}
+        height={30}
+      />
+    </div>
+    <hr width="100%" />
+    {/* Derechos reservados */}
+    <div className="grid grid-cols-1 text-left lg:text-start text-[#637381] lg:flex lg:justify-between py-2 lg:pb-0">
+      <p>© 2023 Farmacia Torres. Todos los derechos reservados.</p>
+      <div className="grid grid-cols-1 text-left lg:text-right py-4 lg:py-0">
+        <Link className="pb-1" href="#">
+          Condiciones de uso
+        </Link>
+        <Link className="pb-1" href="#">
+          Politicas de Cookies
+        </Link>
+        <Link className="pb-1" href="#">
+          Politicas y términos de uso
+        </Link>
+        <Link className="pb-4" href="#">
+          Politicas de prviacidad
+        </Link>
+      </div>
+    </div>
+  </div>
 );
 
 export default Footerft;
