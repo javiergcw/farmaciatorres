@@ -6,14 +6,14 @@ import { FaRegUser, FaSearch } from "react-icons/fa";
 const Header = () => {
   return (
     <>
-      <div className="text-[#637381]">
+      <div className="text-[#637381] grid lg:grid-cols-2">
         <div>
           <span className="font-semibold">Llama ahora: </span>(605) 3851717
         </div>
         <div>
-          <Image src="/images/icons/CarGray.svg" width={22} height={16} />
+
           <p>
-            <span className="font-semibold"> Envíos gratis</span> por compras
+            <span className="font-semibold"><Image src="/images/icons/CarGray.svg" width={22} height={16} /> Envíos gratis</span> por compras
             superiores a $49.900
           </p>
           <Link href="">Ver farmacias</Link>
